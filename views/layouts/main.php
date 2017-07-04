@@ -4,11 +4,18 @@ use michaeldomo\instashow\Instagram;
 /* @var $this \yii\web\View */
 /* @var $content string */
     dmstr\web\AdminLteAsset::register($this);
-
     $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/adminlte/dist');
     $instagram = new Instagram();
-    $channel='luis.sanchez.13'; $limit=1;
+    $channel='mj_ruiz_11'; $limit=1;
     $items = $instagram->get($channel, $limit);
+    if (!isset($items[0])) {
+        $name='User';
+        $img=$directoryAsset."/img/avatar5.png"; 
+    }
+    else{
+        $name=$items[0]->user->full_name;
+        $img=$items[0]->user->profile_picture;
+    }
     ?>
     <?php $this->beginPage() ?>
     <!DOCTYPE html>
@@ -27,14 +34,16 @@ use michaeldomo\instashow\Instagram;
         <?= $this->render(
             'header.php',
             ['directoryAsset' => $directoryAsset,
-              'items'=>$items,  
+              'name'=>$name, 
+              'img'=>$img, 
             ]
         ) ?>
 
         <?= $this->render(
             'left.php',
             ['directoryAsset' => $directoryAsset,
-            'items'=>$items, 
+            'name'=>$name, 
+            'img'=>$img,
             ]
         )
         ?>

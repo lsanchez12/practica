@@ -7,11 +7,11 @@
             <div class="pull-left image">
                 
             <?php
-            echo"<img class='img-circle' src='".$items[0]->user->profile_picture."'/>"; 
+            echo"<img class='img-circle' src='".$img."'/>"; 
             ?>
             </div>
             <div class="pull-left info">
-                <?= '<p>'.$items[0]->user->full_name.'</p>'?>
+                <?= '<p>'.$name.'</p>'?>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>

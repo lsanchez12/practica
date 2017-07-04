@@ -6,7 +6,7 @@ use yii\helpers\Html;
 
 <header class="main-header">
 
-    <?= Html::a('<span class="logo-mini">SCA</span><span class="logo-lg">Sistemakata C.A</span>', Yii::$app->homeUrl, ['class' => 'logo']) ?>
+    <?= Html::a('<span class="logo-mini"><img src="'.$directoryAsset.'/img/rockets.png"/></span><span class="logo-lg"><img src="'.$directoryAsset.'/img/rockets.png"/>Sistemakata C.A</span>', Yii::$app->homeUrl, ['class' => 'logo']) ?>
 
     <nav class="navbar navbar-static-top" role="navigation">
 
@@ -19,17 +19,16 @@ use yii\helpers\Html;
             <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="<?= $items[0]->user->profile_picture ?>" class="user-image" alt="User Image"/>
-                        <span class="hidden-xs"><?= $items[0]->user->full_name?></span>
+                        <img src="<?= $img ?>" class="user-image" alt="User Image"/>
+                        <span class="hidden-xs"><?= $name?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="<?= $items[0]->user->profile_picture ?>" class="img-circle"
-                                 alt="User Image"/>
+                            <img src="<?= $img ?>" class="img-circle" alt="User Image"/>
 
                             <p>
-                                <?= $items[0]->user->full_name?>
+                                <?= $name?>
                                 <small>Programador Junior</small>
                             </p>
                         </li>
