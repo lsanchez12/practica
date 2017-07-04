@@ -1,11 +1,14 @@
 <?php
 use yii\helpers\Html;
-
+use michaeldomo\instashow\Instagram;
 /* @var $this \yii\web\View */
 /* @var $content string */
     dmstr\web\AdminLteAsset::register($this);
 
     $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/adminlte/dist');
+    $instagram = new Instagram();
+    $channel='luis.sanchez.13'; $limit=1;
+    $items = $instagram->get($channel, $limit);
     ?>
     <?php $this->beginPage() ?>
     <!DOCTYPE html>
@@ -23,12 +26,16 @@ use yii\helpers\Html;
 
         <?= $this->render(
             'header.php',
-            ['directoryAsset' => $directoryAsset]
+            ['directoryAsset' => $directoryAsset,
+              'items'=>$items,  
+            ]
         ) ?>
 
         <?= $this->render(
             'left.php',
-            ['directoryAsset' => $directoryAsset]
+            ['directoryAsset' => $directoryAsset,
+            'items'=>$items, 
+            ]
         )
         ?>
 

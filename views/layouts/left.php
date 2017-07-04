@@ -1,11 +1,3 @@
-<?php
-use michaeldomo\instashow\Instagram;
-$instagram = new Instagram();
-$channel='luis.sanchez.13'; $limit=1;
-$items = $instagram->get($channel, $limit);
-//print_r($items);
-
-?>
 <aside class="main-sidebar">
 
     <section class="sidebar">
@@ -29,7 +21,7 @@ $items = $instagram->get($channel, $limit);
             [
                 'options' => ['class' => 'sidebar-menu'],
                 'items' => [
-                    ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
+                    ['label' => 'Menu de Opciones', 'options' => ['class' => 'header']],
                     ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
                     ['label' => 'Home', 'url' => ['/site/index']],

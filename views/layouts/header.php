@@ -2,10 +2,6 @@
 use yii\helpers\Html;
 /* @var $this \yii\web\View */
 /* @var $content string */
-use michaeldomo\instashow\Instagram;
-$instagram = new Instagram();
-$channel='luis.sanchez.13'; $limit=1;
-$items = $instagram->get($channel, $limit);
 ?>
 
 <header class="main-header">
