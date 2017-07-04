@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use yii\bootstrap\Modal;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\EquiposSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -16,7 +17,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Equipos', ['create'], ['class' => 'btn btn-success']) ?>
+        <?php
+        Modal::begin([
+            'header' => '<h2>Crear Equipos</h2>',
+            'toggleButton' => ['label' => 'Crear Equipos','class'=>'btn btn-success'],
+        ]);
+
+        echo $this->render('create',['model'=>$model]);
+
+        Modal::end();
+        ?>
     </p>
 <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,

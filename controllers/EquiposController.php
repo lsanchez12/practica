@@ -37,10 +37,20 @@ class EquiposController extends Controller
     {
         $searchModel = new EquiposSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        $model = new Equipos();
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->save()) {
+                Yii::$app->session->setFlash('success','Equipo Creado Exitosamente');
+            }
+            else {
+                Yii::$app->session->setFlash('danger','No se pudo crear el Equipo');
+            }
+            $model = new Equipos();
+        } 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'model'=>$model,
         ]);
     }
 
