@@ -22,7 +22,9 @@
         "kartik-v/yii2-nav-x": "*",
         "dmstr/yii2-adminlte-asset": "2.*",
         "michaeldomo/yii2-instagram-widget": "dev-master",
-        "kmarenov/yii2-instagram-widget": "*"
+        "kmarenov/yii2-instagram-widget": "*",
+        "kartik-v/yii2-mpdf": "*",
+        "kartik-v/yii2-widget-select2": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

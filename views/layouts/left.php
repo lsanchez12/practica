@@ -34,7 +34,7 @@ $items = $instagram->get($channel, $limit);
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
                     ['label' => 'Home', 'url' => ['/site/index']],
                     ['label' => 'Usuarios', 'url' => ['/user']],
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
+                    ['label' => 'Equipos', 'url' => ['/equipos']],
                     /* [
                         'label' => 'Same tools',
                         'icon' => 'share',
